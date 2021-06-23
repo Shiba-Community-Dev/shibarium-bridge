@@ -45,7 +45,7 @@ function startHttp() {
 
 function startHttpExplorer() {
 
-    exec('npm --prefix explorer/ run start"', {},(error, stdout, stderr) => {
+    exec('npm --prefix block_explorer/ run start"', {},(error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
