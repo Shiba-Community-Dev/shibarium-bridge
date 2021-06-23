@@ -1,0 +1,57 @@
+{
+  "name": "protractor",
+  "description": "Webdriver E2E test wrapper for Angular.",
+  "homepage": "https://github.com/angular/protractor",
+  "keywords": [
+    "angular",
+    "test",
+    "testing",
+    "webdriver",
+    "webdriverjs",
+    "selenium"
+  ],
+  "author": "Julie Ralph <ju.ralph@gmail.com>",
+  "dependencies": {
+    "request": "~2.57.0",
+    "selenium-webdriver": "2.47.0",
+    "minijasminenode": "1.1.1",
+    "jasminewd": "1.1.0",
+    "jasminewd2": "0.0.6",
+    "jasmine": "2.3.2",
+    "saucelabs": "~1.0.1",
+    "glob": "~3.2",
+    "adm-zip": "0.4.4",
+    "optimist": "~0.6.0",
+    "q": "1.0.0",
+    "lodash": "~2.4.1",
+    "source-map-support": "~0.2.6",
+    "html-entities": "~1.1.1",
+    "accessibility-developer-tools": "~2.6.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "chai": "~3.3.0",
+    "chai-as-promised": "~5.1.0",
+    "jshint": "2.5.0",
+    "mocha": "2.3.3",
+    "cucumber": "~0.6.0",
+    "express": "~3.3.4",
+    "rimraf": "~2.2.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular/protractor.git"
+  },
+  "bin": {
+    "protractor": "bin/protractor",
+    "webdriver-manager": "bin/webdriver-manager"
+  },
+  "main": "lib/protractor.js",
+  "scripts": {
+    "pretest": "node_modules/.bin/jshint lib spec scripts",
+    "test": "node scripts/test.js",
+    "start": "node testapp/scripts/web-server.js"
+  },
+  "license": "MIT",
+  "version": "2.5.1"
+}
