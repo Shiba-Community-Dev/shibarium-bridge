@@ -1,6 +1,6 @@
 {
   "name": "shibarium-bridge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Provide interoperability of the Shibarium to  mutltiple blockchains.",
   "main": "app.js",
   "bin": "bin/geth.exe",
