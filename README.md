@@ -1,6 +1,6 @@
 # Shibarium-Bridge
 
-The Shibarium bridge enables interoperability between multiple blocks networks.
+The Shibarium bridge enables interoperability between multiple blockchain networks.
 The features include token transfers from ethereum main chain to the Shibarium ecosystem.
 
 
