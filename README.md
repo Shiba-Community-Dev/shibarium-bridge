@@ -35,6 +35,9 @@ Once inside "shibarium-bridge/" root folder Type command in shell.
 
 
 3.) After connecting to Bridge interface . You will be able to start the local Shibaruium Node.
+    
+    *IMPORTANT* You must allow geth access through windows firewall. It will normally pop up a dialog box requesting permissions. 
+    We asked just allow geth on private and public networks. */IMPORATANT*
 
 ![bridge](https://github.com/Shiba-Community-Dev/shibarium-bridge/blob/main/test/shibarium_bridge_interface.jpg "bridge")
 
