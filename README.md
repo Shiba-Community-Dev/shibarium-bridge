@@ -24,7 +24,7 @@ Download Zip File:
 Unzip to folder and open command shell inside that folder
 Once inside "shibarium-bridge/" root folder Type command in shell.
 
-`node app.js`
+* node app.js *
 
 
 1.) This will open a setup page if the network has not been initalized yet.
