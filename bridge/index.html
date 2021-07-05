@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="devs@shibarium.dev">
+    <title>Shibarium Dapps</title>
+
+<!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><style>
+
+
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   
+    <!-- Imported libaries-->
+   <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" crossorigin="anonymous"></script>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="css/dapp.css" rel="stylesheet">
+  </head>
+  <body class="d-flex w-100 h-100 text-center text-white bg-dark">
+ 
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Dapp Dash-Board</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="https://discord.gg/KtBWrMgC">Discord</a>
+        <a class="nav-link" href="https://github.com/Shiba-Community-Dev">Github</a>
+        <a class="btn-wallet btn btn-outline-warning" href="#" onclick="" role="button" id="connectButton">Click MetaMask</a>
+        <a class="btn-wallet btn btn-outline-warning" href="#" onclick="" role="button" id="AddNetworkButton">Add Network</a>
+       </nav>
+    </div>
+  </header>
+   <!-- Socket.io -->
+          <script>
+             
+            const socket = io("http://localhost:9000");
+
+            socket.on("console", (data,casevalue) => {
+              
+              console.log(data);
+              if (data === " ") { document.getElementById("c1").innerHTML = data; }
+               else { document.getElementById("c1").innerHTML += '<br>' +  '<span class="material-icons">done_outline</span>' + data; }       
+           
+                //progress bar
+              switch(casevalue) {
+
+                case 0:
+                  document.getElementById("b1").innerHTML= 
+                  '<div class="progress"> <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="10"aria-valuemin="0" aria-valuemax="100" style="width:10%"> 10% </div> </div> ';
+                  break;
+                case 1:
+                   document.getElementById("b1").innerHTML= 
+                  '<div class="progress"> <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="20"aria-valuemin="0" aria-valuemax="100" style="width:20%"> 20% </div> </div> ';
+                  break;
+
+                case 2:
+                   document.getElementById("b1").innerHTML= 
+                  '<div class="progress"> <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="60"aria-valuemin="0" aria-valuemax="100" style="width:60%"> 60% </div> </div> ';
+                  break;
+                case 3:
+                   document.getElementById("b1").innerHTML= 
+                  '<div class="progress"> <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="100"aria-valuemin="0" aria-valuemax="100" style="width:99%"> 100% </div> </div> ';
+                  break;
+                  case 4:
+                   document.getElementById("b1").innerHTML= 
+                  '<span class="material-icons">done_outline</span> <b>Connected</b>';
+                  break;
+                  case 5:
+                  document.getElementById("b1").innerHTML= 
+                  '';
+                  sessionStorage.setItem("nodeStarted", "true");
+                  break;
+              }  
+
+            });
+            const startG = () => {
+            socket.emit("run", "check");
+            };           
+
+          </script>
+          <!-- Socket.io -->
+
+ 
+  <main class="px-3">
+    <h1>Welcome to The Shibarium.</h1>
+    <p class="lead">Your first step into unrealized value of the power of decentralization.</p>
+    <p> <div id="c1"></div> </p>
+    <p class="lead" id="b1">
+      <a  href="#" class="btn btn-lg fw-bold btn-outline-warning" onclick="startG()">Start Node</a>
+    </p>
+  </main>
+
+  <h2 class="sub-title" >Bridges</h2>
+  <p class="lead"> Bridge over your ERC20 assets into the Shibarium Ecosystem. Earn instant reflection with "STEAK" our native token  </p>
+<p>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-white bg-dark">
+    <div class="card-headers card-header">Ethereum to Shibarium</div>
+      <div class="card-body">
+     <div class="row"> 
+        <div class="col-sm-4 lbl"> 
+            <label for="amt" >Amount</label>
+            <input type="text" class="form-control" placeholder="0" aria-label="0" id="amtA">
+        </div>
+        <div class="col-sm-5 lbl"> 
+            <label for="type-token" >Selected Token</label>
+            <select class="form-select" aria-label="Select Token"> <option value="1">Shib</option><option value="2">ETH</option> <option value="3">LEASH</option></select>
+        </div>
+        <div class="col-sm-10 lbl">
+            <label for="destination" >Destination Address</label>
+            <input type="text" class="form-control" placeholder="Please Enter The Receiving Wallet Address" aria-label="Please Enter The Receiving Wallet Address" id="destination">
+        </div>
+     </div>
+        <a href="#" class="btn btn-outline-warning">Start Transfer</a>
+        <p><h6 class="card-subtitle mb-2 text-muted">Please note that you may face extra fees associated with the Ethereum network</h6></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-white bg-dark">
+    <div class="card-headers card-header">Binance to Shibarium</div>
+      <div class="card-body">
+       <div class="row"> 
+        <div class="col-sm-4 lbl"> 
+            <label for="amt" >Amount</label>
+            <input type="text" class="form-control" placeholder="0" aria-label="0" id="amt">
+        </div>
+        <div class="col-sm-5 lbl"> 
+            <label for="type-token" >Selected Token</label>
+            <select class="form-select" aria-label="Select Token"> <option value="1">Shib</option><option value="2">ETH</option> <option value="3">LEASH</option></select>
+        </div>
+        <div class="col-sm-10 lbl">
+            <label for="destination" >Destination Address</label>
+            <input type="text" class="form-control" placeholder="Please Enter The Receiving Wallet Address" aria-label="Please Enter The Receiving Wallet Address" id="destinationB">
+        </div>
+     </div>
+        <a href="#" class="btn btn-outline-warning">Start Transfer</a>
+        <p>
+        <h6 class="card-subtitle mb-2 text-muted">Please note that you may face extra fees associated with the Binance network</h6>
+        </p>
+        
+      </div>
+    </div>
+  </div>
+  </P>
+
+  <footer class="mt-auto text-white-50">
+    <p>Dapp DashBoard for <a href="https://github.com/Shiba-Community-Dev" class="text-white">Shibarium</a>, by <a href="https://github.com/Shiba-Community-Dev" class="text-white">@shibarium-Dev</a>.</p>
+  </footer>
+</div>
+    <script type="module" src="js/meta_mask_module.js" crossorigin="anonymous" > </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script> 
+  
+
+   <script type="text/javascript">
+         if (sessionStorage.getItem("nodeStarted") == "true") {
+          document.getElementById("b1").innerHTML= ' ';
+         console.log(sessionStorage.getItem("nodeStarted"))
+         }
+
+    </script> 
+   
+
+  </body>
+</html>

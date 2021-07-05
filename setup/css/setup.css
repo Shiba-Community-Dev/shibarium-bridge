@@ -1,0 +1,53 @@
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
+
+
+.container-setup {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-top: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    margin-left: 0;
+}
+
+.display-div {
+    
+    background-color: lightgray;
+    padding: var(--bs-gutter-x,.75rem);
+    width: 80%;
+
+
+}
+.column {
+    float: left;
+    
+  }
+  
+  .left {
+    width: 25%;
+  }
+  
+  .right {
+    width: 75%;
+    background-color: lightgray;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row {
+    padding: 5px;
+    margin: 10px;  
+  }
