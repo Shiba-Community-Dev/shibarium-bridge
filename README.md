@@ -6,7 +6,7 @@ The features include token transfers from ethereum main chain to the Shibarium e
 
 # Dependecies
 
-This version of shibarium-bridge has been tested with windows 10 
+This version of shibarium-bridge container has been tested with windows 10 
 
 You must first have [Node.js and npm](https://nodejs.org/en/download/ "Node.js and npm") installed.
 Visit the download page and use the windows installer.
