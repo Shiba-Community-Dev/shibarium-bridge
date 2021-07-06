@@ -12,6 +12,9 @@ You must first have [Node.js and npm](https://nodejs.org/en/download/ "Node.js a
 Visit the download page and use the windows installer.
 
 
+Install using npm package registry
+
+``` npm i shibarium-bridge ``` :gem: 
 
 Clone Using Github:
 
@@ -19,7 +22,7 @@ Clone Using Github:
 
 Download Zip File:
 
-`https://github.com/Shiba-Community-Dev/shibarium-bridge/archive/refs/heads/main.zip`
+`https://github.com/Shiba-Community-Dev/shibarium-bridge/archive/refs/heads/main.zip` :loudspeaker:
 
 Unzip to folder and open command shell inside that folder
 Once inside "shibarium-bridge/" root folder Type command in shell.
@@ -34,10 +37,10 @@ Once inside "shibarium-bridge/" root folder Type command in shell.
 2.) After the installation completes, you will be presented with a button to proceed to bridge interface.
 
 
-3.) After connecting to Bridge interface . You will be able to start the local Shibaruium Node.
+3.) After connecting to Bridge interface . You will be able to start the local Shibaruium Node. :black_flag: :black_flag: :black_flag:
     
     *IMPORTANT* You must allow geth access through windows firewall. It will normally pop up a dialog box requesting permissions. 
-    When asked just allow geth on private and public networks. */IMPORATANT*
+    When asked just allow geth on private and public networks. */IMPORATANT*  
 
 ![bridge](https://github.com/Shiba-Community-Dev/shibarium-bridge/blob/main/test/shibarium_bridge_interface.jpg "bridge")
 
