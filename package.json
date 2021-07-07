@@ -5,7 +5,8 @@
   "main": "app.js",
   "bin": "bin/geth.exe",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start":"node app.js"
   },
   "repository": {
     "type": "git",
