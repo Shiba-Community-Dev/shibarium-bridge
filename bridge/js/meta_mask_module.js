@@ -18,7 +18,9 @@ if (provider) {
 
 //We create a new MetaMask onboarding object to use in our app
 const onboarding = new MetaMaskOnboarding({ forwarderOrigin });
+}
 
+//Go to settings in MetaMask then Advanced 
 
 const initialize = () => {
   //You will start here
