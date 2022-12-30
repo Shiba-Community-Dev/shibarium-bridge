@@ -48,3 +48,5 @@ Once inside "shibarium-bridge/" root folder Type command in shell.
 
 ![metamask](https://github.com/Shiba-Community-Dev/shibarium-bridge/blob/main/test/shibarium_metamask.jpg "metamask")
 
+Shiba Inu Ecosystem (c) 2022
+
