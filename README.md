@@ -47,6 +47,17 @@ Once inside "shibarium-bridge/" root folder Type command in shell.
 4.) Connecting MetaMask is simple by connecting wallet and adding the shibarium network.
 
 ![metamask](https://github.com/Shiba-Community-Dev/shibarium-bridge/blob/main/test/shibarium_metamask.jpg "metamask")
-
+Create a folder under the drive root
+$ mkdir actions-runner; cd actions-runner# Download the latest runner package
+$ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.299.1/actions-runner-win-x64-2.299.1.zip -OutFile actions-runner-win-x64-2.299.1.zip# Optional: Validate the hash
+$ if((Get-FileHash -Path actions-runner-win-x64-2.299.1.zip -Algorithm SHA256).Hash.ToUpper() -ne 'f7940b16451d6352c38066005f3ee6688b53971fcc20e4726c7907b32bfdf539'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
+$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.299.1.zip", "$PWD")
+Configure
+# Create the runner and start the configuration experience
+$ ./config.cmd --url https://github.com/geniusj204/shibarium-bridge --token AUPA6PGSGTBWHEYO4GFDX6TDV25KK# Run it!
+$ ./run.cmd
+Using your self-hosted runner
+# Use this YAML in your workflow file for each job
+runs-on: self-hosted
 Shiba Inu Ecosystem (c) 2022
 
