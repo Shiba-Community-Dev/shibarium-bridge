@@ -1,5 +1,5 @@
 # Shibarium-Bridge
-
+# https://shibatoken.com
 The Shibarium bridge enables interoperability between multiple blockchain networks.
 The features include token transfers from ethereum main chain to the Shibarium ecosystem.
 
@@ -51,13 +51,14 @@ Create a folder under the drive root
 $ mkdir actions-runner; cd actions-runner# Download the latest runner package
 $ Invoke-WebRequest -Uri https://github.com/actions/runner/releases/download/v2.299.1/actions-runner-win-x64-2.299.1.zip -OutFile actions-runner-win-x64-2.299.1.zip# Optional: Validate the hash
 $ if((Get-FileHash -Path actions-runner-win-x64-2.299.1.zip -Algorithm SHA256).Hash.ToUpper() -ne 'f7940b16451d6352c38066005f3ee6688b53971fcc20e4726c7907b32bfdf539'.ToUpper()){ throw 'Computed checksum did not match' }# Extract the installer
-$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/actions-runner-win-x64-2.299.1.zip", "$PWD")
+$ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$shibastax/actions-runner-win-x64-2.299.1.zip", "$shibastax")
 Configure
 # Create the runner and start the configuration experience
-$ ./config.cmd --url https://github.com/geniusj204/shibarium-bridge --token AUPA6PGSGTBWHEYO4GFDX6TDV25KK# Run it!
+$ .shibastax./config.cmd --url https://github.com/geniusj204/shibarium-bridge --token AUPA6PGSGTBWHEYO4GFDX6TDV25KK# Run it!
 $ ./run.cmd
 Using your self-hosted runner
 # Use this YAML in your workflow file for each job
-runs-on: self-hosted
-Shiba Inu Ecosystem (c) 2022
-
+# runs-on:eth-mainnet shibarium-testnet
+# Shiba Inu Ecosystem (c) 2023
+# Joseph G Parente
+# josephparente204@gmail.com
