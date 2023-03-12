@@ -54,11 +54,13 @@ $ if((Get-FileHash -Path actions-runner-win-x64-2.299.1.zip -Algorithm SHA256).H
 $ Add-Type -AssemblyName System.IO.Compression.FileSystem ; [System.IO.Compression.ZipFile]::ExtractToDirectory("$shibastax/actions-runner-win-x64-2.299.1.zip", "$shibastax")
 Configure
 # Create the runner and start the configuration experience
-$ .shibastax./config.cmd --url https://github.com/geniusj204/shibarium-bridge --token AUPA6PGSGTBWHEYO4GFDX6TDV25KK# Run it!
-$ ./run.cmd
+$ .shibastax./config.cmd --url https://github.com/geniusj204/shibarium-bridge-token.AUPA6PGSGTBWHEYO4GFDX6TDV25KK
+# Run it!
+$ shibastax./run.cmd
 Using your self-hosted runner
 # Use this YAML in your workflow file for each job
 # runs-on:eth-mainnet shibarium-testnet
 # Shiba Inu Ecosystem (c) 2023
 # Joseph G Parente
 # josephparente204@gmail.com
+![6e2b6532d229c86100fbd5b8b2ca82c7_0](https://user-images.githubusercontent.com/85856060/224560160-6ce7842e-4634-4184-9c62-31673536c1dd.jpeg)
